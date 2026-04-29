@@ -30,7 +30,7 @@ jobs:
       run: |
         aws s3 cp index.html s3://${{ env.S3_BUCKET_NAME }}/
 
-    # CloudFront 캐시 무효화 (ID가 등록되어 있다면 주석 해제)
-    - name: Invalidate CloudFront Cache
-      run: |
-        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+    # # CloudFront 캐시 무효화 (ID가 등록되어 있다면 주석 해제)
+    # - name: Invalidate CloudFront Cache
+    #   run: |
+    #     aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
