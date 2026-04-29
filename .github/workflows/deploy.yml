@@ -53,11 +53,17 @@ jobs:
         script: |
           aws ecr get-login-password --region ap-northeast-2 | sudo docker login --username AWS --password-stdin ${{ steps.login-ecr.outputs.registry }}
           
-          # 기존 컨테이너 중지 및 삭제
-          sudo docker stop frontend-app || true
-          sudo docker rm frontend-app || true
+          # 1. 80번 포트를 사용하는 모든 컨테이너를 강제로 찾아내서 삭제
+          EXISTING_CONTAINER=$(sudo docker ps -q --filter "publish=80")
+          if [ ! -z "$EXISTING_CONTAINER" ]; then
+            sudo docker stop $EXISTING_CONTAINER
+            sudo docker rm $EXISTING_CONTAINER
+          fi
+
+          # 2. 혹시 이름이 겹칠 수 있는 컨테이너들도 추가로 삭제
+          sudo docker rm -f frontend-app aws-lab-frontend || true
           
-          # 새 이미지 Pull 및 실행 (80포트로 서비스)
+          # 3. 새 이미지 Pull 및 실행
           sudo docker pull ${{ steps.login-ecr.outputs.registry }}/aws-lab-frontend:latest
           sudo docker run -d --name frontend-app -p 80:80 ${{ steps.login-ecr.outputs.registry }}/aws-lab-frontend:latest
       env:
