@@ -28,7 +28,7 @@ jobs:
     # 빌드 없이 index.html 파일 하나만 S3에 업로드
     - name: Deploy index.html to S3
       run: |
-        aws s3 cp index.html s3://${{ env.S3_BUCKET_NAME }}/ --acl public-read
+        aws s3 cp index.html s3://${{ env.S3_BUCKET_NAME }}/
 
     # CloudFront 캐시 무효화 (ID가 등록되어 있다면 주석 해제)
     - name: Invalidate CloudFront Cache
