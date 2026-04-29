@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRON WORKOUT | Connect Your Strength</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Pretendard:wght@400;600;800&display=swap');
+        
+        body { font-family: 'Pretendard', sans-serif; background-color: #050505; }
+        .logo-font { font-family: 'Syncopate', sans-serif; }
+        .neon-text { color: #d9ff00; text-shadow: 0 0 15px rgba(217, 255, 0, 0.5); }
+        .neon-bg { background-color: #d9ff00; }
+        .card-blur { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .btn-hover:hover { background-color: #c4e600; transform: scale(1.05); transition: all 0.3s; }
+    </style>
+</head>
+<body class="text-white selection:bg-lime-400 selection:text-black">
+
+    <header class="flex justify-between items-center px-6 py-8 max-w-6xl mx-auto">
+        <div class="logo-font text-2xl tracking-tighter italic">IRON<span class="neon-text">BODY</span></div>
+        <nav class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-gray-400">
+            <a href="#" class="hover:text-white">Programs</a>
+            <a href="#" class="hover:text-white">Trainers</a>
+            <a href="#" class="hover:text-white">Community</a>
+        </nav>
+        <div class="h-2 w-2 rounded-full neon-bg animate-pulse"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pt-12 pb-24">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <span class="inline-block px-3 py-1 mb-6 text-[10px] font-black tracking-[0.2em] border border-white/20 uppercase">No Pain No Gain</span>
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.9] mb-8 uppercase italic">
+                    Push your <br> <span class="neon-text underline decoration-2 underline-offset-8">Limits</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-md leading-relaxed mb-10">
+                    당신의 한계에 도전하십시오.
+                </p>
+                <div class="flex gap-4">
+                    <button class="neon-bg text-black px-8 py-4 rounded-sm font-black text-sm uppercase btn-hover">Start Training</button>
+                    <button class="border border-white px-8 py-4 rounded-sm font-black text-sm uppercase hover:bg-white hover:text-black transition-all">Learn More</button>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="card-blur rounded-3xl p-8 relative z-10">
+                    <div class="flex justify-between items-end mb-10">
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mb-1">Today's Progress</p>
+                            <h2 class="text-3xl font-bold italic">LEG DAY</h2>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-4xl font-black neon-text">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full neon-bg w-[85%]"></div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase">Calories</p>
+                                <p class="text-xl font-bold">452 kcal</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <p class="text-[10px] text-gray-500 uppercase">Duration</p>
+                                <p class="text-xl font-bold">58 min</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-lime-400/20 rounded-full blur-[80px]"></div>
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/10 rounded-full blur-[60px]"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 py-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+        <div>&copy; 2026 IRON BODY GLOBAL</div>
+        <div class="mt-4 md:mt-0 flex space-x-8">
+            <a href="#" class="hover:text-white">Privacy</a>
+            <a href="#" class="hover:text-white">Terms</a>
+            <a href="#" class="text-white">AWS Deployment System ACTIVE</a>
+        </div>
+    </footer>
+
+</body>
+</html>
